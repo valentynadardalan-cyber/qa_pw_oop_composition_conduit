@@ -30,9 +30,9 @@ testParameters.forEach(({ tagsNumber, testNameEnding }) => {
       await createArticlePage.fillTagsField(article.tags);
       await createArticlePage.clickPublishArticleButton();
 
-      await viewArticlePage.assertArticleTitleIsVisible(article.title);
-      await viewArticlePage.assertArticleTextIsVisible(article.text);
-      await viewArticlePage.assertArticleTagsAreVisible(article.tags);
+      await viewArticlePage.articleContentBlock.assertArticleTitleIsVisible(article.title);
+      await viewArticlePage.articleContentBlock.assertArticleTextIsVisible(article.text);
+      await viewArticlePage.articleContentBlock.assertArticleTagsAreVisible(article.tags);
     });
   });
 });

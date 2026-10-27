@@ -1,4 +1,5 @@
 import { BaseComponent } from './BaseComponent';
+import { ArticleFeedItem } from './ArticleFeedItem';
 import { expect } from '../../common/helpers/pw';
 
 export class YourFeedTab extends BaseComponent {
@@ -7,6 +8,7 @@ export class YourFeedTab extends BaseComponent {
   constructor(page, userId = 0) {
     super(page, userId);
     this.#yourFeedLink = this.page.getByText('Your Feed');
+    this.articleFeedItem = new ArticleFeedItem(this.page, userId);
   }
 
   async assertTabLinkVisible() {
